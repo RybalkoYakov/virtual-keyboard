@@ -191,4 +191,284 @@ export const latterCharacters: IKeyCharacters[] = [
       shiftedChar: "Н"
     }
   },
+  {
+    firstLanguage: {
+      mainChar: "u",
+      shiftedChar: "U"
+    },
+    secondLanguage: {
+      mainChar: "г",
+      shiftedChar: "Г"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "i",
+      shiftedChar: "I"
+    },
+    secondLanguage: {
+      mainChar: "ш",
+      shiftedChar: "Ш"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "o",
+      shiftedChar: "O"
+    },
+    secondLanguage: {
+      mainChar: "щ",
+      shiftedChar: "Щ"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "p",
+      shiftedChar: "P"
+    },
+    secondLanguage: {
+      mainChar: "з",
+      shiftedChar: "З"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "[",
+      shiftedChar: "{"
+    },
+    secondLanguage: {
+      mainChar: "х",
+      shiftedChar: "Х"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "]",
+      shiftedChar: "}"
+    },
+    secondLanguage: {
+      mainChar: "ъ",
+      shiftedChar: "Ъ"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "a",
+      shiftedChar: "A"
+    },
+    secondLanguage: {
+      mainChar: "ф",
+      shiftedChar: "Ф"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "s",
+      shiftedChar: "S"
+    },
+    secondLanguage: {
+      mainChar: "ы",
+      shiftedChar: "Ы"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "d",
+      shiftedChar: "D"
+    },
+    secondLanguage: {
+      mainChar: "в",
+      shiftedChar: "В"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "f",
+      shiftedChar: "F"
+    },
+    secondLanguage: {
+      mainChar: "а",
+      shiftedChar: "А"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "g",
+      shiftedChar: "G"
+    },
+    secondLanguage: {
+      mainChar: "п",
+      shiftedChar: "П"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "h",
+      shiftedChar: "H"
+    },
+    secondLanguage: {
+      mainChar: "р",
+      shiftedChar: "Р"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "j",
+      shiftedChar: "J"
+    },
+    secondLanguage: {
+      mainChar: "о",
+      shiftedChar: "О"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "k",
+      shiftedChar: "K"
+    },
+    secondLanguage: {
+      mainChar: "л",
+      shiftedChar: "Л"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "l",
+      shiftedChar: "L"
+    },
+    secondLanguage: {
+      mainChar: "д",
+      shiftedChar: "Д"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: ";",
+      shiftedChar: ":"
+    },
+    secondLanguage: {
+      mainChar: "ж",
+      shiftedChar: "Ж"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "'",
+      shiftedChar: "\""
+    },
+    secondLanguage: {
+      mainChar: "э",
+      shiftedChar: "Э"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "z",
+      shiftedChar: "Z"
+    },
+    secondLanguage: {
+      mainChar: "я",
+      shiftedChar: "Я"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "x",
+      shiftedChar: "X"
+    },
+    secondLanguage: {
+      mainChar: "ч",
+      shiftedChar: "Ч"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "c",
+      shiftedChar: "C"
+    },
+    secondLanguage: {
+      mainChar: "с",
+      shiftedChar: "С"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "v",
+      shiftedChar: "V"
+    },
+    secondLanguage: {
+      mainChar: "м",
+      shiftedChar: "М"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "b",
+      shiftedChar: "B"
+    },
+    secondLanguage: {
+      mainChar: "и",
+      shiftedChar: "И"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "n",
+      shiftedChar: "N"
+    },
+    secondLanguage: {
+      mainChar: "т",
+      shiftedChar: "Т"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "m",
+      shiftedChar: "M"
+    },
+    secondLanguage: {
+      mainChar: "ь",
+      shiftedChar: "Ь"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: ",",
+      shiftedChar: "<"
+    },
+    secondLanguage: {
+      mainChar: "б",
+      shiftedChar: "Б"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: ".",
+      shiftedChar: ">"
+    },
+    secondLanguage: {
+      mainChar: "ю",
+      shiftedChar: "Ю"
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: "?",
+      shiftedChar: "/"
+    },
+    secondLanguage: {
+      mainChar: ".",
+      shiftedChar: ","
+    }
+  },
+  {
+    firstLanguage: {
+      mainChar: " ",
+      shiftedChar: " "
+    },
+    secondLanguage: {
+      mainChar: " ",
+      shiftedChar: " "
+    }
+  },
 ];

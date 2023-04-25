@@ -14,7 +14,7 @@ export class Key {
     const additionalKey = document.createElement("span") as HTMLSpanElement;
 
     key.textContent = this.characters.firstLanguage.mainChar;
-    additionalKey.textContent = this.characters.firstLanguage.shiftedChar;
+    additionalKey.textContent = this.characters.firstLanguage.shiftedChar || "";
 
     if (this.className) key.classList.add(this.className);
 
@@ -23,7 +23,7 @@ export class Key {
     return key;
   }
 
-  changeLanguage() {
+  public changeLanguage() {
     [this.characters.firstLanguage, this.characters.secondLanguage] = [this.characters.secondLanguage, this.characters.firstLanguage];
   }
 }
