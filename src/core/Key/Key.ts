@@ -1,12 +1,15 @@
 import {IKeyCharacters} from "./IKeyCharacters";
+import {IKeyConfig} from "./IKeyConfig";
 
 export class Key {
-  private characters: IKeyCharacters;
+  private readonly characters: IKeyCharacters;
   private readonly className: string;
+  private readonly onclick: (e: MouseEvent, characters: IKeyCharacters) => void;
 
-  constructor(characters: IKeyCharacters, className?: string) {
-    this.characters = characters;
-    this.className = className;
+  constructor(config: IKeyConfig) {
+    this.characters = config.characters;
+    this.className = config.className;
+    this.onclick = config.onclick;
   }
 
   render(): HTMLButtonElement {
@@ -15,6 +18,12 @@ export class Key {
 
     key.textContent = this.characters.firstLanguage.mainChar;
     additionalKey.textContent = this.characters.firstLanguage.shiftedChar || "";
+
+    if (this.onclick) {
+      key.addEventListener("click", (e) => {
+        this.onclick(e, this.characters);
+      });
+    }
 
     if (this.className) key.classList.add(this.className);
 
@@ -27,3 +36,4 @@ export class Key {
     [this.characters.firstLanguage, this.characters.secondLanguage] = [this.characters.secondLanguage, this.characters.firstLanguage];
   }
 }
+

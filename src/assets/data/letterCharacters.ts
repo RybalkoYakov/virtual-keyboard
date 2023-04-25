@@ -1,6 +1,6 @@
 import {IKeyCharacters} from "../../core/Key/IKeyCharacters";
 
-export const latterCharacters: IKeyCharacters[] = [
+export const letterCharacters: IKeyCharacters[] = [
   {
     firstLanguage: {
       mainChar: "`",
