@@ -1,13 +1,6 @@
-import {Key} from "./core/Key/Key";
-import {letterCharacters} from "./assets/data/letterCharacters";
+import "./assets/styles/button.css";
+import "./assets/styles/container.css";
+import {appContainer} from "./components/app/app";
 
 const root = document.body;
-
-const key= new Key({
-  characters: letterCharacters[0],
-  onclick: function (e, characters) {
-    console.log(characters.firstLanguage.shiftedChar);
-  }
-});
-
-root.append(key.render());
+root.append(appContainer);
