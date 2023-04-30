@@ -23,7 +23,9 @@ export class Key {
     const additionalKey = document.createElement("span") as HTMLSpanElement;
 
     key.textContent = this.characters.firstLanguage.mainChar;
-    additionalKey.textContent = this.characters.firstLanguage.shiftedChar || "";
+    if (!this.characters.isSpecialCharacter) {
+      additionalKey.textContent = this.characters.firstLanguage.shiftedChar;
+    }
 
     if (this.onclick) {
       key.addEventListener("click", (e) => {
@@ -50,7 +52,9 @@ export class Key {
     const key = this.self;
 
     const  additionalKey = document.createElement("span") as HTMLSpanElement;
-    additionalKey.textContent = this.characters.firstLanguage.shiftedChar;
+    if (!this.characters.isSpecialCharacter) {
+      additionalKey.textContent = this.characters.firstLanguage.shiftedChar;
+    }
 
     key.textContent = this.characters.firstLanguage.mainChar;
     key.append(additionalKey);

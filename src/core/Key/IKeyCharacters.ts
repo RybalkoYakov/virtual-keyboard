@@ -7,4 +7,5 @@ export interface IKeyCharacters {
     mainChar: string
     shiftedChar?: string
   }
+  isSpecialCharacter?: boolean
 }

@@ -3,4 +3,7 @@
   flex-wrap: wrap;
   row-gap: 10px;
   column-gap: 10px;
+  width: 910px;
+  height: 250px;
+  margin: 0 auto;
 }
