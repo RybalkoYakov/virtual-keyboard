@@ -1,5 +1,6 @@
 import {IKeyCharacters} from "./IKeyCharacters";
 import {IKeyConfig} from "./IKeyConfig";
+import {ClassList} from "../../assets/data/ClassList";
 
 export class Key {
   private readonly characters: IKeyCharacters;
@@ -33,15 +34,11 @@ export class Key {
       });
     }
 
-
-
     if (this.className) key.classList.add(this.className);
     if (this.customWidth) key.style.width = `${this.customWidth}px`;
 
     key.append(additionalKey);
     key.id = this.id;
-
-
 
     this.self = key;
 

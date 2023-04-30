@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   row-gap: 10px;
   column-gap: 10px;
   width: 910px;
-  height: 250px;
-  margin: 0 auto;
+  height: 290px;
+  margin: 50px auto;
 }

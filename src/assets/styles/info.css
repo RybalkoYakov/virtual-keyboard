@@ -1,0 +1,10 @@
+.info {
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 25px;
+  font-family: sans-serif;
+  text-shadow: 0 0 1px 1px #ffffff;
+  user-select: none;
+}
