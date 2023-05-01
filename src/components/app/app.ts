@@ -97,5 +97,5 @@ const keyboard = new KeyBoard({
 
 
 window.addEventListener("keyup", (e) => {
-
+  console.log(e.code);
 });
