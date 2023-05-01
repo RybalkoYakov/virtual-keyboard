@@ -1,7 +1,9 @@
 import {IKeyCharacters} from "../../core/Key/IKeyCharacters";
+import {SpecialChars} from "./SpecialChars";
 
 export const letterCharacters: IKeyCharacters[] = [
   {
+    code: "Backquote",
     firstLanguage: {
       mainChar: "`",
       shiftedChar: "~"
@@ -12,6 +14,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit1",
     firstLanguage: {
       mainChar: "1",
       shiftedChar: "!"
@@ -22,6 +25,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit2",
     firstLanguage: {
       mainChar: "2",
       shiftedChar: "@"
@@ -32,6 +36,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit3",
     firstLanguage: {
       mainChar: "3",
       shiftedChar: "#"
@@ -42,6 +47,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit4",
     firstLanguage: {
       mainChar: "4",
       shiftedChar: "$"
@@ -52,6 +58,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit5",
     firstLanguage: {
       mainChar: "5",
       shiftedChar: "%"
@@ -62,6 +69,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit6",
     firstLanguage: {
       mainChar: "6",
       shiftedChar: "^"
@@ -72,6 +80,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit7",
     firstLanguage: {
       mainChar: "7",
       shiftedChar: "&"
@@ -82,6 +91,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit8",
     firstLanguage: {
       mainChar: "8",
       shiftedChar: "*"
@@ -92,6 +102,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit9",
     firstLanguage: {
       mainChar: "9",
       shiftedChar: "("
@@ -102,6 +113,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Digit0",
     firstLanguage: {
       mainChar: "0",
       shiftedChar: ")"
@@ -112,6 +124,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Minus",
     firstLanguage: {
       mainChar: "-",
       shiftedChar: "_"
@@ -122,6 +135,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Equal",
     firstLanguage: {
       mainChar: "=",
       shiftedChar: "+"
@@ -132,6 +146,31 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: SpecialChars.Backspace,
+    firstLanguage: {
+      mainChar: SpecialChars.Backspace,
+      shiftedChar: SpecialChars.Backspace
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Backspace,
+      shiftedChar: SpecialChars.Backspace
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: SpecialChars.Tab,
+    firstLanguage: {
+      mainChar: SpecialChars.Tab,
+      shiftedChar: SpecialChars.Tab
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Tab,
+      shiftedChar: SpecialChars.Tab
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "KeyQ",
     firstLanguage: {
       mainChar: "q",
       shiftedChar: "Q"
@@ -142,6 +181,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyW",
     firstLanguage: {
       mainChar: "w",
       shiftedChar: "W"
@@ -152,6 +192,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyE",
     firstLanguage: {
       mainChar: "e",
       shiftedChar: "E"
@@ -162,6 +203,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyR",
     firstLanguage: {
       mainChar: "r",
       shiftedChar: "R"
@@ -172,6 +214,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyT",
     firstLanguage: {
       mainChar: "t",
       shiftedChar: "T"
@@ -182,6 +225,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyY",
     firstLanguage: {
       mainChar: "y",
       shiftedChar: "Y"
@@ -192,6 +236,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyU",
     firstLanguage: {
       mainChar: "u",
       shiftedChar: "U"
@@ -202,6 +247,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyI",
     firstLanguage: {
       mainChar: "i",
       shiftedChar: "I"
@@ -212,6 +258,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyO",
     firstLanguage: {
       mainChar: "o",
       shiftedChar: "O"
@@ -222,6 +269,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyP",
     firstLanguage: {
       mainChar: "p",
       shiftedChar: "P"
@@ -232,6 +280,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "BracketLeft",
     firstLanguage: {
       mainChar: "[",
       shiftedChar: "{"
@@ -242,6 +291,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "BracketRight",
     firstLanguage: {
       mainChar: "]",
       shiftedChar: "}"
@@ -252,6 +302,42 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Backslash",
+    firstLanguage: {
+      mainChar: "\\",
+      shiftedChar: "|"
+    },
+    secondLanguage: {
+      mainChar: "\\",
+      shiftedChar: "//"
+    }
+  },
+  {
+    code: "Delete",
+    firstLanguage: {
+      mainChar: SpecialChars.Delete,
+      shiftedChar: SpecialChars.Delete
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Delete,
+      shiftedChar: SpecialChars.Delete
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "CapsLock",
+    firstLanguage: {
+      mainChar: SpecialChars.CapsLock,
+      shiftedChar: SpecialChars.CapsLock
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.CapsLock,
+      shiftedChar: SpecialChars.CapsLock
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "KeyA",
     firstLanguage: {
       mainChar: "a",
       shiftedChar: "A"
@@ -262,6 +348,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyS",
     firstLanguage: {
       mainChar: "s",
       shiftedChar: "S"
@@ -272,6 +359,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyD",
     firstLanguage: {
       mainChar: "d",
       shiftedChar: "D"
@@ -282,6 +370,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyF",
     firstLanguage: {
       mainChar: "f",
       shiftedChar: "F"
@@ -292,6 +381,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyG",
     firstLanguage: {
       mainChar: "g",
       shiftedChar: "G"
@@ -302,6 +392,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyH",
     firstLanguage: {
       mainChar: "h",
       shiftedChar: "H"
@@ -312,6 +403,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyJ",
     firstLanguage: {
       mainChar: "j",
       shiftedChar: "J"
@@ -322,6 +414,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyK",
     firstLanguage: {
       mainChar: "k",
       shiftedChar: "K"
@@ -332,6 +425,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyL",
     firstLanguage: {
       mainChar: "l",
       shiftedChar: "L"
@@ -342,6 +436,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Semicolon",
     firstLanguage: {
       mainChar: ";",
       shiftedChar: ":"
@@ -352,6 +447,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Quote",
     firstLanguage: {
       mainChar: "'",
       shiftedChar: "\""
@@ -362,6 +458,31 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Enter",
+    firstLanguage: {
+      mainChar: SpecialChars.Enter,
+      shiftedChar: SpecialChars.Enter
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Enter,
+      shiftedChar: SpecialChars.Enter
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ShiftLeft",
+    firstLanguage: {
+      mainChar: SpecialChars.Shift,
+      shiftedChar: SpecialChars.Shift
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Shift,
+      shiftedChar: SpecialChars.Shift
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "KeyZ",
     firstLanguage: {
       mainChar: "z",
       shiftedChar: "Z"
@@ -372,6 +493,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyX",
     firstLanguage: {
       mainChar: "x",
       shiftedChar: "X"
@@ -382,6 +504,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyC",
     firstLanguage: {
       mainChar: "c",
       shiftedChar: "C"
@@ -392,6 +515,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyV",
     firstLanguage: {
       mainChar: "v",
       shiftedChar: "V"
@@ -402,6 +526,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyB",
     firstLanguage: {
       mainChar: "b",
       shiftedChar: "B"
@@ -412,6 +537,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyN",
     firstLanguage: {
       mainChar: "n",
       shiftedChar: "N"
@@ -422,6 +548,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "KeyM",
     firstLanguage: {
       mainChar: "m",
       shiftedChar: "M"
@@ -432,6 +559,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Comma",
     firstLanguage: {
       mainChar: ",",
       shiftedChar: "<"
@@ -442,6 +570,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Period",
     firstLanguage: {
       mainChar: ".",
       shiftedChar: ">"
@@ -452,6 +581,7 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "Slash",
     firstLanguage: {
       mainChar: "?",
       shiftedChar: "/"
@@ -462,6 +592,55 @@ export const letterCharacters: IKeyCharacters[] = [
     }
   },
   {
+    code: "ArrowUp",
+    firstLanguage: {
+      mainChar: SpecialChars.ArrowUp,
+      shiftedChar: SpecialChars.ArrowUp
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.ArrowUp,
+      shiftedChar: SpecialChars.ArrowUp
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ShiftRight",
+    firstLanguage: {
+      mainChar: SpecialChars.Shift,
+      shiftedChar: SpecialChars.Shift
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Shift,
+      shiftedChar: SpecialChars.Shift
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ControlLeft",
+    firstLanguage: {
+      mainChar: SpecialChars.Control,
+      shiftedChar: SpecialChars.Control
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Control,
+      shiftedChar: SpecialChars.Control
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "AltLeft",
+    firstLanguage: {
+      mainChar: SpecialChars.Alt,
+      shiftedChar: SpecialChars.Alt
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Alt,
+      shiftedChar: SpecialChars.Alt
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "Space",
     firstLanguage: {
       mainChar: " ",
       shiftedChar: " "
@@ -470,5 +649,77 @@ export const letterCharacters: IKeyCharacters[] = [
       mainChar: " ",
       shiftedChar: " "
     }
+  },
+  {
+    code: "AltRight",
+    firstLanguage: {
+      mainChar: SpecialChars.Alt,
+      shiftedChar: SpecialChars.Alt
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Alt,
+      shiftedChar: SpecialChars.Alt
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ControlRight",
+    firstLanguage: {
+      mainChar: SpecialChars.Control,
+      shiftedChar: SpecialChars.Control
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Control,
+      shiftedChar: SpecialChars.Control
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ArrowLeft",
+    firstLanguage: {
+      mainChar: SpecialChars.ArrowLeft,
+      shiftedChar: SpecialChars.ArrowLeft
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.ArrowLeft,
+      shiftedChar: SpecialChars.ArrowLeft
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ArrowDown",
+    firstLanguage: {
+      mainChar: SpecialChars.ArrowDown,
+      shiftedChar: SpecialChars.ArrowDown
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.ArrowDown,
+      shiftedChar: SpecialChars.ArrowDown
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "ArrowRight",
+    firstLanguage: {
+      mainChar: SpecialChars.ArrowRight,
+      shiftedChar: SpecialChars.ArrowRight
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.ArrowRight,
+      shiftedChar: SpecialChars.ArrowRight
+    },
+    isSpecialCharacter: true
+  },
+  {
+    code: "MetaLeft",
+    firstLanguage: {
+      mainChar: SpecialChars.Window,
+      shiftedChar: SpecialChars.Window
+    },
+    secondLanguage: {
+      mainChar: SpecialChars.Window,
+      shiftedChar: SpecialChars.Window
+    },
+    isSpecialCharacter: true
   },
 ];

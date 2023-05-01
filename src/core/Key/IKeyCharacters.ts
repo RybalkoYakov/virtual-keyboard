@@ -1,4 +1,5 @@
 export interface IKeyCharacters {
+  code: string
   firstLanguage: {
     mainChar: string
     shiftedChar?: string
@@ -7,4 +8,5 @@ export interface IKeyCharacters {
     mainChar: string
     shiftedChar?: string
   }
+  isSpecialCharacter?: boolean
 }
