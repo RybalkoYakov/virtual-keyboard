@@ -3,6 +3,7 @@ import {IKeyCharacters} from "./IKeyCharacters";
 export interface IKeyConfig {
   characters: IKeyCharacters
   className?: string
-  onclick?: (e?: MouseEvent, characters?: IKeyCharacters) => void
+  onkeydown?: (e?: MouseEvent, characters?: IKeyCharacters) => void
+  onkeyup?: (e?: MouseEvent, characters?: IKeyCharacters) => void
   width?: number
 }

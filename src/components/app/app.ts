@@ -94,8 +94,3 @@ const keyboard = new KeyBoard({
   container: appContainer,
   info: info("This keyboard was created in the windows operating system.")
 });
-
-
-window.addEventListener("keyup", (e) => {
-  console.log(e.code);
-});
