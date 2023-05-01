@@ -11,6 +11,7 @@ export class KeyBoard {
 
   private isShiftPressed: boolean;
 
+
   constructor(config: IKeyBoardConfig) {
     this.textAreaElement = config.input;
     this.container = config.container;
@@ -87,6 +88,22 @@ export class KeyBoard {
 
             this.textAreaElement.value = tmp;
             this.textAreaElement.setSelectionRange(startIndex, startIndex);
+          }
+
+          if (key.characters.code === "ArrowUp") {
+            this.textAreaElement.value += "▲";
+          }
+
+          if (key.characters.code === "ArrowDown") {
+            this.textAreaElement.value += "▼";
+          }
+
+          if (key.characters.code === "ArrowLeft") {
+            this.textAreaElement.value += "◄";
+          }
+
+          if (key.characters.code === "ArrowRight") {
+            this.textAreaElement.value += "►";
           }
 
           if (key.characters.code === "CapsLock") {

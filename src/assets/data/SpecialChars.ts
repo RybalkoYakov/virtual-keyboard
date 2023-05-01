@@ -8,8 +8,8 @@ export enum SpecialChars {
   Alt = "Alt",
   Delete = "Del",
   Window = "Win",
-  ArrowLeft = "AL",
-  ArrowRight = "AR",
-  ArrowUp = "AU",
-  ArrowDown = "AD"
+  ArrowLeft = "◄",
+  ArrowRight = "►",
+  ArrowUp = "▲",
+  ArrowDown = "▼"
 }

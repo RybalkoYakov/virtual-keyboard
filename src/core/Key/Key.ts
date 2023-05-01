@@ -101,6 +101,22 @@ export class Key {
         this._textAreaElement.setSelectionRange(startIndex, startIndex);
       }
 
+      if (this.characters.code === "ArrowUp") {
+        this._textAreaElement.value += "▲";
+      }
+
+      if (this.characters.code === "ArrowDown") {
+        this._textAreaElement.value += "▼";
+      }
+
+      if (this.characters.code === "ArrowLeft") {
+        this._textAreaElement.value += "◄";
+      }
+
+      if (this.characters.code === "ArrowRight") {
+        this._textAreaElement.value += "►";
+      }
+
       if (this.characters.code === "CapsLock") {
         console.log("caps");
       }
