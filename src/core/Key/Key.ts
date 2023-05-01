@@ -1,16 +1,14 @@
 import {IKeyCharacters} from "./IKeyCharacters";
 import {IKeyConfig} from "./IKeyConfig";
 import {ClassList} from "../../assets/data/ClassList";
-import {Language} from "./Language";
 import {AppStore} from "../../Store/AppStore";
+import {KeyBoard} from "../KeyBoard/KeyBoard";
 
 export class Key {
   private readonly _characters: IKeyCharacters;
   get characters(): IKeyCharacters {
     return this._characters;
   }
-
-  private currentLanguage: Language = AppStore.currentLanguage;
 
   private _self: HTMLButtonElement;
   get self(): HTMLButtonElement {
@@ -20,6 +18,11 @@ export class Key {
   private _textAreaElement: HTMLTextAreaElement;
   set textAreaElement(value: HTMLTextAreaElement) {
     this._textAreaElement = value;
+  }
+
+  private _keyboard: KeyBoard;
+  set keyboard(value: KeyBoard) {
+    this._keyboard = value;
   }
 
   private readonly className: string;
@@ -44,13 +47,22 @@ export class Key {
     const key = document.createElement("button") as HTMLButtonElement;
     const additionalKey = document.createElement("span") as HTMLSpanElement;
 
-    key.textContent = this._characters[AppStore.currentLanguage].mainChar;
-    if (!this._characters.isSpecialCharacter) {
-      additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
+    if (!AppStore.isShifted) {
+      key.textContent = this._characters[AppStore.currentLanguage].mainChar;
+      if (!this._characters.isSpecialCharacter) {
+        additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
+      }
+    } else {
+      key.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
+      if (!this._characters.isSpecialCharacter) {
+        additionalKey.textContent = this._characters[AppStore.currentLanguage].mainChar;
+      }
     }
 
     key.addEventListener("mousedown", () => {
-      key.classList.add(ClassList.ButtonClicked);
+      if (this.characters.code !== "CapsLock") {
+        key.classList.add(ClassList.ButtonClicked);
+      }
       if (!this.characters.isSpecialCharacter) {
         this._textAreaElement.value += this.characters[AppStore.currentLanguage].mainChar;
       }
@@ -121,24 +133,26 @@ export class Key {
       }
 
       if (this.characters.code === "CapsLock") {
-        console.log("caps");
+        key.classList.toggle(ClassList.ButtonClicked);
+        AppStore.changeIsShifted();
+        this._keyboard.updateKeyboard();
       }
 
       if (this.characters.code === "ShiftLeft" || this.characters.code === "ShiftRight") {
-        console.log("shift");
-      }
-
-      if (this.characters.code === "ControlLeft" || this.characters.code === "ControlRight") {
-        console.log("Control");
-      }
-
-      if (this.characters.code === "AltLeft" || this.characters.code === "AltRight") {
-        console.log("Alt");
+        AppStore.changeIsShifted();
+        this._keyboard.updateKeyboard();
       }
     });
 
     key.addEventListener("mouseup", () => {
-      key.classList.remove(ClassList.ButtonClicked);
+      if (this.characters.code !== "CapsLock") {
+        key.classList.remove(ClassList.ButtonClicked);
+      }
+
+      if (this.characters.code === "ShiftLeft" || this.characters.code === "ShiftRight") {
+        AppStore.changeIsShifted();
+        this._keyboard.updateKeyboard();
+      }
     });
 
     if (this.onmousedown) {
@@ -168,11 +182,19 @@ export class Key {
     const key = this._self;
 
     const  additionalKey = document.createElement("span") as HTMLSpanElement;
-    if (!this._characters.isSpecialCharacter) {
-      additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
+
+    if (!AppStore.isShifted) {
+      if (!this._characters.isSpecialCharacter) {
+        additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
+      }
+      key.textContent = this._characters[AppStore.currentLanguage].mainChar;
+    } else {
+      if (!this._characters.isSpecialCharacter) {
+        additionalKey.textContent = this._characters[AppStore.currentLanguage].mainChar;
+      }
+      key.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
     }
 
-    key.textContent = this._characters[AppStore.currentLanguage].mainChar;
     key.append(additionalKey);
   }
 }

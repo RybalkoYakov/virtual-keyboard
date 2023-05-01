@@ -1,7 +1,6 @@
 import {Key} from "../Key/Key";
 import {IKeyBoardConfig} from "./IKeyBoardConfig";
 import {ClassList} from "../../assets/data/ClassList";
-import {Language} from "../Key/Language";
 import {AppStore} from "../../Store/AppStore";
 
 export class KeyBoard {
@@ -10,14 +9,6 @@ export class KeyBoard {
   private readonly textAreaElement: HTMLTextAreaElement;
   private readonly info: HTMLDivElement;
   private container: HTMLElement;
-
-  private _currentLanguage: Language = AppStore.currentLanguage;
-  get currentLanguage(): Language {
-    return this._currentLanguage;
-  }
-
-  private isShiftPressed = false;
-
 
   constructor(config: IKeyBoardConfig) {
     this.textAreaElement = config.input;
@@ -33,6 +24,10 @@ export class KeyBoard {
     this.keys.forEach(key => {
       key.textAreaElement = this.textAreaElement;
     });
+
+    this.keys.forEach(key => {
+      key.keyboard = this;
+    });
   }
 
   private init() {
@@ -45,9 +40,17 @@ export class KeyBoard {
       this.keys.forEach(key => {
         if (key.characters.code === code) {
           e.preventDefault();
-          key.self.classList.add(ClassList.ButtonClicked);
+
+          if (key.characters.code !== "CapsLock") {
+            key.self.classList.add(ClassList.ButtonClicked);
+          }
+
           if (!key.characters.isSpecialCharacter) {
-            this.textAreaElement.value += key.characters[AppStore.currentLanguage].mainChar;
+            if (!AppStore.isShifted) {
+              this.textAreaElement.value += key.characters[AppStore.currentLanguage].mainChar;
+            } else {
+              this.textAreaElement.value += key.characters[AppStore.currentLanguage].shiftedChar;
+            }
           }
 
           if (key.characters.code === "Tab") {
@@ -116,25 +119,29 @@ export class KeyBoard {
           }
 
           if (key.characters.code === "CapsLock") {
-            //console.log("Caps");
+            if (e.repeat) return;
+            key.self.classList.toggle(ClassList.ButtonClicked);
+            AppStore.changeIsShifted();
+            this.updateKeyboard();
           }
 
           if (key.characters.code === "ShiftLeft" || key.characters.code === "ShiftRight") {
+            if (e.repeat) return;
+            AppStore.changeIsShifted();
+            this.updateKeyboard();
+          }
+
+          if (key.characters.code === "ControlLeft" || key.characters.code === "ControlRight") {
             if (e.altKey) {
               this.changeLanguage();
             }
           }
 
-          if (key.characters.code === "ControlLeft" || key.characters.code === "ControlRight") {
-            //console.log("Control");
-          }
-
           if (key.characters.code === "AltLeft" || key.characters.code === "AltRight") {
-            if (e.shiftKey) {
+            if (e.ctrlKey) {
               this.changeLanguage();
             }
           }
-
         }
       });
     });
@@ -144,7 +151,13 @@ export class KeyBoard {
       this.keys.forEach(key => {
         if (key.characters.code === code) {
           e.preventDefault();
-          key.self.classList.remove(ClassList.ButtonClicked);
+          if (key.characters.code !== "CapsLock") {
+            key.self.classList.remove(ClassList.ButtonClicked);
+          }
+          if (key.characters.code === "ShiftLeft" || key.characters.code === "ShiftRight") {
+            AppStore.changeIsShifted();
+            this.updateKeyboard();
+          }
         }
       });
     });
@@ -155,7 +168,7 @@ export class KeyBoard {
     this.updateKeyboard();
   }
 
-  private updateKeyboard() {
+  public updateKeyboard() {
     this.keys.forEach(key => {
       key.updateKey();
     });

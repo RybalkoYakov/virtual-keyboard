@@ -93,5 +93,5 @@ const keyboard = new KeyBoard({
   keys,
   input: input(),
   container: appContainer,
-  info: info("This keyboard was created in the windows operating system.")
+  info: info("This keyboard was created in the windows operating system. Press any \"CTRL + ALT\" to change language.")
 });
