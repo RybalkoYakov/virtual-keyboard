@@ -63,8 +63,13 @@ export class Key {
       if (this.characters.code !== "CapsLock") {
         key.classList.add(ClassList.ButtonClicked);
       }
+
       if (!this.characters.isSpecialCharacter) {
-        this._textAreaElement.value += this.characters[AppStore.currentLanguage].mainChar;
+        if (!AppStore.isShifted) {
+          this._textAreaElement.value += this.characters[AppStore.currentLanguage].mainChar;
+        } else {
+          this._textAreaElement.value += this.characters[AppStore.currentLanguage].shiftedChar;
+        }
       }
 
       if (this.characters.code === "Tab") {
