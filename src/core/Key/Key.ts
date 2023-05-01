@@ -1,13 +1,16 @@
 import {IKeyCharacters} from "./IKeyCharacters";
 import {IKeyConfig} from "./IKeyConfig";
 import {ClassList} from "../../assets/data/ClassList";
+import {Language} from "./Language";
+import {AppStore} from "../../Store/AppStore";
 
 export class Key {
-
   private readonly _characters: IKeyCharacters;
   get characters(): IKeyCharacters {
     return this._characters;
   }
+
+  private currentLanguage: Language = AppStore.currentLanguage;
 
   private _self: HTMLButtonElement;
   get self(): HTMLButtonElement {
@@ -23,8 +26,8 @@ export class Key {
   private readonly id: string;
   private readonly customWidth: number;
 
-  private onmousedown : (e: MouseEvent, characters?: IKeyCharacters) => void;
-  private onmouseup : (e: MouseEvent, characters?: IKeyCharacters) => void;
+  private readonly onmousedown : (e: MouseEvent, characters?: IKeyCharacters) => void;
+  private readonly onmouseup : (e: MouseEvent, characters?: IKeyCharacters) => void;
 
   constructor(config: IKeyConfig) {
     this._characters = config.characters;
@@ -41,15 +44,15 @@ export class Key {
     const key = document.createElement("button") as HTMLButtonElement;
     const additionalKey = document.createElement("span") as HTMLSpanElement;
 
-    key.textContent = this._characters.firstLanguage.mainChar;
+    key.textContent = this._characters[AppStore.currentLanguage].mainChar;
     if (!this._characters.isSpecialCharacter) {
-      additionalKey.textContent = this._characters.firstLanguage.shiftedChar;
+      additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
     }
 
-    key.addEventListener("mousedown", (e) => {
+    key.addEventListener("mousedown", () => {
       key.classList.add(ClassList.ButtonClicked);
       if (!this.characters.isSpecialCharacter) {
-        this._textAreaElement.value += this.characters.firstLanguage.mainChar;
+        this._textAreaElement.value += this.characters[AppStore.currentLanguage].mainChar;
       }
 
       if (this.characters.code === "Tab") {
@@ -134,7 +137,7 @@ export class Key {
       }
     });
 
-    key.addEventListener("mouseup", (e) => {
+    key.addEventListener("mouseup", () => {
       key.classList.remove(ClassList.ButtonClicked);
     });
 
@@ -166,15 +169,11 @@ export class Key {
 
     const  additionalKey = document.createElement("span") as HTMLSpanElement;
     if (!this._characters.isSpecialCharacter) {
-      additionalKey.textContent = this._characters.firstLanguage.shiftedChar;
+      additionalKey.textContent = this._characters[AppStore.currentLanguage].shiftedChar;
     }
 
-    key.textContent = this._characters.firstLanguage.mainChar;
+    key.textContent = this._characters[AppStore.currentLanguage].mainChar;
     key.append(additionalKey);
-  }
-
-  public changeLanguage() {
-    [this._characters.firstLanguage, this._characters.secondLanguage] = [this._characters.secondLanguage, this._characters.firstLanguage];
   }
 }
 

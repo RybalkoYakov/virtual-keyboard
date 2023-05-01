@@ -1,15 +1,22 @@
 import {Key} from "../Key/Key";
 import {IKeyBoardConfig} from "./IKeyBoardConfig";
 import {ClassList} from "../../assets/data/ClassList";
+import {Language} from "../Key/Language";
+import {AppStore} from "../../Store/AppStore";
 
 export class KeyBoard {
   private keys: Key[];
 
-  private textAreaElement: HTMLTextAreaElement;
+  private readonly textAreaElement: HTMLTextAreaElement;
   private readonly info: HTMLDivElement;
   private container: HTMLElement;
 
-  private isShiftPressed: boolean;
+  private _currentLanguage: Language = AppStore.currentLanguage;
+  get currentLanguage(): Language {
+    return this._currentLanguage;
+  }
+
+  private isShiftPressed = false;
 
 
   constructor(config: IKeyBoardConfig) {
@@ -21,6 +28,8 @@ export class KeyBoard {
     this.init();
     this.container.append(this.info);
     this.container.append(this.textAreaElement);
+
+    // Set reference to textarea for each key
     this.keys.forEach(key => {
       key.textAreaElement = this.textAreaElement;
     });
@@ -38,7 +47,7 @@ export class KeyBoard {
           e.preventDefault();
           key.self.classList.add(ClassList.ButtonClicked);
           if (!key.characters.isSpecialCharacter) {
-            this.textAreaElement.value += key.characters.firstLanguage.mainChar;
+            this.textAreaElement.value += key.characters[AppStore.currentLanguage].mainChar;
           }
 
           if (key.characters.code === "Tab") {
@@ -107,19 +116,23 @@ export class KeyBoard {
           }
 
           if (key.characters.code === "CapsLock") {
-            console.log("caps");
+            //console.log("Caps");
           }
 
           if (key.characters.code === "ShiftLeft" || key.characters.code === "ShiftRight") {
-            console.log("shift");
+            if (e.altKey) {
+              this.changeLanguage();
+            }
           }
 
           if (key.characters.code === "ControlLeft" || key.characters.code === "ControlRight") {
-            console.log("Control");
+            //console.log("Control");
           }
 
           if (key.characters.code === "AltLeft" || key.characters.code === "AltRight") {
-            console.log("Alt");
+            if (e.shiftKey) {
+              this.changeLanguage();
+            }
           }
 
         }
@@ -138,12 +151,11 @@ export class KeyBoard {
   }
 
   public changeLanguage() {
-    this.keys.forEach(key => {
-      key.changeLanguage();
-    });
+    AppStore.changeLanguage();
+    this.updateKeyboard();
   }
 
-  public updateKeyboard() {
+  private updateKeyboard() {
     this.keys.forEach(key => {
       key.updateKey();
     });
