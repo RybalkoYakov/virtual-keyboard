@@ -2,7 +2,7 @@ import {Language} from "../core/Key/Language";
 
 export const AppStore  = {
   currentLanguage: localStorage.getItem("currentLanguage") || "firstLanguage",
-  isShifted: localStorage.getItem("isShifted") === "true" || false,
+  isShifted: false,
   changeLanguage: () => {
     if (AppStore.currentLanguage === "firstLanguage") {
       AppStore.currentLanguage = "secondLanguage";
@@ -13,7 +13,6 @@ export const AppStore  = {
   },
   changeIsShifted: () => {
     AppStore.isShifted = !AppStore.isShifted;
-    localStorage.setItem("isShifted", AppStore.isShifted.toString());
   }
 } as {
   currentLanguage: Language
